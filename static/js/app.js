@@ -27,18 +27,18 @@ function buildTable(data) {
 
 function handleClick() {
     // Grab the datetime value from the filter
-    let date = d3.select("#datetime".property("value"));
+    let date = d3.select("#datetime").property("value");
     let filterData = tableData;
     
     // Check if a data was entered and if so, filter the data using that date
     if (date) {
         
-        filteredData = filteredData.filter(row => row.datetime === date);
+        filterData = filterData.filter(row => row.datetime === date);
 
     }
 
     // Call the buildTable function using the newly filtered data (or the original data if no date filters were entered)
-    buildTable(filteredData);
+    buildTable(filterData);
 }
 
 // Attach an event to listen for the form button
